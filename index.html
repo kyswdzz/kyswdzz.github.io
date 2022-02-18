@@ -152,6 +152,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-知识图谱原理及应用概述上-邹磊" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/18/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E4%B8%8A-%E9%82%B9%E7%A3%8A/">知识图谱原理及应用概述上(邹磊)</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/18/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E4%B8%8A-%E9%82%B9%E7%A3%8A/" class="archive-article-date">
+  	<time datetime="2022-02-18T04:51:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是知识图谱（Knowledge-Graph）"><a href="#什么是知识图谱（Knowledge-Graph）" class="headerlink" title="什么是知识图谱（Knowledge Graph）"></a>什么是知识图谱（Knowledge Graph）</h2><p><font face="楷体" >知识图谱本质上是基于图的语义网络，表示实体和实体之间的关系。</font>  </p>
+<h2 id="知识图谱研究的多个维度"><a href="#知识图谱研究的多个维度" class="headerlink" title="知识图谱研究的多个维度"></a>知识图谱研究的多个维度</h2><p><font face="楷体" >自然语言处理（信息抽取、语义解析）；数据库（RDF数据库系统、数据集成与知识融合）；机器学习（知识图谱数据的知识表示Graph Embedding）;知识工程（知识库构建、基于规则的推理）</font>  </p>
+<h2 id="知识图谱与知识工程"><a href="#知识图谱与知识工程" class="headerlink" title="知识图谱与知识工程"></a>知识图谱与知识工程</h2><p><font face="楷体" >知识图谱是Web和大数据时代的知识工程新的发展形态。知识工程的核心：知识库和推理引擎。<br><strong>领域本体的构建</strong>：面向特定领域的形式化地对于共享概念体系的明确而又详细的说明<br><strong>知识抽取</strong>：从海量的数据中通过信息抽取的方式获取知识<br><strong>知识融合</strong>：通过对多个相关知识图谱的对齐、关联和合并，使其称为一个有机的整体，以提供更全面知识<br></font></p>
+<h2 id="知识本体"><a href="#知识本体" class="headerlink" title="知识本体"></a>知识本体</h2><h4 id="本体定义"><a href="#本体定义" class="headerlink" title="本体定义"></a>本体定义</h4><p><font face="楷体" >“本体”概念来源于哲学领域，指的是对客观存在系统的解释和说明。<br>计算机学科中，“本体”用于面向特定领域的形式化地对于共享概念体系的明确而又详细的说明。它提供了面向特定领域的概念、对象类型、上下位语义关系等以及他们的属性等，是对特定领域之中概念及其相互之间关系的形式化表达，从而方便地进行自动推理等功能。<br></font></p>
+<h4 id="本体语言"><a href="#本体语言" class="headerlink" title="本体语言"></a>本体语言</h4><p><font face="楷体" >目前知识图谱数据集常用的W3C所定义的<strong>RDF(S)<strong>和</strong>OWL</strong>语言。<br></font></p>
+<h4 id="举例：yago知识库中本体"><a href="#举例：yago知识库中本体" class="headerlink" title="举例：yago知识库中本体"></a>举例：yago知识库中本体</h4><h2 id="知识图谱数据模型"><a href="#知识图谱数据模型" class="headerlink" title="知识图谱数据模型"></a>知识图谱数据模型</h2><h4 id="RDF"><a href="#RDF" class="headerlink" title="RDF"></a>RDF</h4><p><font face="楷体" >RDF（Resource Description Framework），目前是描述本体的<strong>事实标准</strong>。<br>RDF定义了一个简单的模型，用于<strong>描述资源，属性和值之间的关系</strong>。资源是可以用URI标识的所有事物，属性是资源的一个特定的方面或特征，值可以是另外一个资源，也可以是字符串。总的来说，一个RDF描述就是一个三元组：&lt;主语、谓词、宾语&gt;</font></p>
+<h4 id="RDFS"><a href="#RDFS" class="headerlink" title="RDFS"></a>RDFS</h4><p><font face="楷体" >在RDF数据层的基础上引入模式层Schema，定义类、属性、关系、属性的“定义域”与“值域”来描述与约束资源，构建最基本的类层次体系和属性体系，支持简单的上下位推理。</font></p>
+<h4 id="OWL"><a href="#OWL" class="headerlink" title="OWL"></a>OWL</h4><p><font face="楷体" >进一步扩展RDFs的词汇，可声明类间互斥关系、属性的传递性等复杂语义，支持基于本体的自动推理，提供了一组合适web传播的描述逻辑的语法，对机器友好，但认知复杂性限制了工程应用。</font></p>
+<h2 id="知识抽取"><a href="#知识抽取" class="headerlink" title="知识抽取"></a>知识抽取</h2><p><font face="楷体" >知识抽取的目标：是从海量的文本数据中通过信息抽取的方式获取知识，其方法根据所处理的数据源的不同而不同，可分为：结构化数据、半结构化数据、非结构化文本数据。<br>文本信息抽取：从非结构化文本数据中进行知识抽取。实体识别、实体消歧、关系抽取、事件抽取。<br></font></p>
+<h2 id="知识融合"><a href="#知识融合" class="headerlink" title="知识融合"></a>知识融合</h2><p><font face="楷体" >实体对齐必然涉及到实体相似度的计算，假设两个实体的记录x和y，x和y在第i个属性上的值是xi，yi，那么需要通过两步计算：<br>属性相似度：综合单个属性相似度得到属性相似度向量[sim(x1, y1), sim(x2, y2),…,sim(xN, yN)]<br>实体相似度：根据属性相似度向量得到实体的相似度<br>属性相似度计算方法：常用的有编辑距离、集合相似度（Jaccard系数、Dice）、向量相似度等<br>实体相似度计算方法：比如聚合、聚类、表示学习等<br></font></p>
+<p>文章摘自北大邹磊教授的知识图谱讲座；<br>讲座视频地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kg4y1i7GN">https://www.bilibili.com/video/BV1Kg4y1i7GN</a></p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">概念</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">知识图谱</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/18/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E4%B8%8A-%E9%82%B9%E7%A3%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-OPC-UA介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,7 +267,7 @@
 <h4 id="OPC-UA协议"><a href="#OPC-UA协议" class="headerlink" title="OPC UA协议"></a>OPC UA协议</h4><p><font face="楷体" >OPC UA相较于OPC协议扩展了平台（Linux,Unix,Mac等）；扩展了对象类型，支持更复杂的数据类型比如变量、方法和事件；易于配置；协议和应用层集成了安全功能，更安全。</font>  </p>
 <h4 id="OPC-UA应用场景"><a href="#OPC-UA应用场景" class="headerlink" title="OPC UA应用场景"></a>OPC UA应用场景</h4><p><font face="楷体" ><strong>设备不再作为客户端，而是作为OPC UA Server提供各种服务，应用程序作为客户端连接到设备，调用OPC UA Server提供的各种服务。</strong></font></p>
 <p><font face="楷体" >参考：</font><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1W44y1J7LA?p=2">https://www.bilibili.com/video/BV1W44y1J7LA?p=2</a></p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       
 
       
@@ -263,7 +352,7 @@
 <h5 id="APC-RTO"><a href="#APC-RTO" class="headerlink" title="APC/RTO"></a>APC/RTO</h5><p><font face="楷体" >Advanced Process Control，先进过程控制系统，Real Time Optimization，实时优化。</font></p>
 <h5 id="SIS（Safety-Instrumented-System）"><a href="#SIS（Safety-Instrumented-System）" class="headerlink" title="SIS（Safety Instrumented System）"></a>SIS（Safety Instrumented System）</h5><p><font face="楷体" >安全仪表系统，通过对监测数据的实时分析对全厂运行进行实时指挥调度。</font></p>
 <h5 id="DCS（Distributed-Control-System）"><a href="#DCS（Distributed-Control-System）" class="headerlink" title="DCS（Distributed Control System）"></a>DCS（Distributed Control System）</h5><p><font face="楷体" >集散控制系统，重在实时监控和精确控制，以设备安全、稳定运行为目的。DCS主要应用在对测控精度及速度要求较高的生产现场的数据采集。</font></p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       
 
       
@@ -340,7 +429,7 @@
         <h4 id="基本含义"><a href="#基本含义" class="headerlink" title="基本含义"></a>基本含义</h4><p><font face="楷体" >“云”指的是云计算；“边”指的是边缘计算；“端”指的是终端。</font>  </p>
 <h4 id="边缘计算"><a href="#边缘计算" class="headerlink" title="边缘计算"></a>边缘计算</h4><p><font face="楷体" >边缘计算将更多的<strong>数据计算和存储</strong>从 <strong>“核心”下沉到“边缘”</strong>，部署在数据源附近，不需要通过网络到云中心进行处理，从而减少了网络延迟和负载，提高了数据的安全性和隐私性。其优势在于：1、具有高实时性。能够在非常短的时间采集数据，处理数据，满足时效性的要求。2、海量数据处理。最快的速度去取清洗数据，筛选出脏数据并且清除，可以很好地降低传输和存储成本。</font>  </p>
 <h4 id="云边端协同"><a href="#云边端协同" class="headerlink" title="云边端协同"></a>云边端协同</h4><p><font face="楷体" >云边端架构借助云平台灵活、丰富且高效的计算、存储资源以及边缘计算的特点，可以以<strong>低延迟、高吞吐量和数据简化</strong>的方式将端侧的原始数据进行分析与处理。云边端架构的本质是<strong>信息交互</strong>。</font></p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       
 
       
@@ -417,7 +506,7 @@
         <p><font face="楷体" >今天是立春，我第一次坐公交回老家看望爷爷奶奶。奶奶告诉我，立春是有具体时间的，搜了一下果然，4点50分36秒，奶奶说立春时间早的话，天就比较冷。每次回到老家，其实爷爷奶奶和我聊天的内容都类似，但这次，我明显感觉到，爷爷开始健忘了，聊过的内容隔了五分钟又会问一次，这种现象在上午的聊天中出现了不下3次。今年爷爷90岁，奶奶87岁，理智告诉我健忘是正常的，但情感上我还是有点接受不了。当爷爷奶奶聊起小时候的我，我不自觉就眼眶湿润了，他们在遗忘的过程中还能记得二十六年前那个从医院抱回来的婴儿，那个在院子里骑小车、爷爷去上茅房就嚎啕大哭的小孩，我是何其荣幸和幸福啊。</font>  </p>
 <p><font face="楷体" >我也很惭愧，因为我平时很少给家里人打电话。前段时间我意识到应该多和老人们交流，即使电话那头总是说“我们都好，不用担心，你在外注意身体”，然后不到两分钟挂掉电话。作为晚辈，我们中的一些人可能没有很好的表达能力，但我们一定要珍惜和感恩上天给予我们表达的机会。我这次一定，多给爷爷奶奶和姥姥打电话。</font>  </p>
 <p><font face="楷体" >虔诚地祝愿爷爷奶奶和姥姥身体健康，愿你们在岁月的洗礼中继续享受生命！</font>  </p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       
 
       
@@ -494,7 +583,7 @@
         <h4 id="小年"><a href="#小年" class="headerlink" title="小年"></a>小年</h4><p><font face="楷体" >今天是1月26号，是南方的小年，我不知道南方小年里大家会如何过。昨晚下班去馅饼店，店里顾客只有我一个，虽在预料之中但内心还是有些诧异，和店员笑着说，今天人少是因为大家都在家吃饭吧。在北方，小年还算是个比较重要的节点，大家会吃饺子，算是个小团圆日。</font>  </p>
 <h4 id="离职"><a href="#离职" class="headerlink" title="离职"></a>离职</h4><p><font face="楷体" >晚饭后，内心忐忑地向陈总提了离职申请，告诉陈总准备去读博，电话那头陈总说恭喜，我在电话这头表达感谢，感谢公司给予的机会。人生道路很漫长，有时候选择做的多了，感觉自己越来越像是书中描述的长者一般，觉得自己懂得了许多道理。</font>  </p>
 <h4 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h4><p><font face="楷体" >搭建博客的目的，是为了记录自己在接下来的日子里的学习经验、生活感想。脚踏实地，做好每一件自己应该做好的事。愿看到这篇文章的你，身体健康，天天开心。</font></p>
-
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
       
 
       
@@ -646,6 +735,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
             
             <div class="clearfix"></div>
