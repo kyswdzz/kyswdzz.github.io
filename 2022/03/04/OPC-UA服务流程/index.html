@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/2 | 小柯先森</title>
+  <title>OPC UA服务流程 | 小柯先森</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小柯先森">
-<meta property="og:url" content="http://example.com/archives/2022/02/page/2/index.html">
+  <meta name="description" content="机床数据采集方式目前主要有两种方式：基于通信接口的机床数据采集，针对数控系统有标准通信接口的情况，如RS232、以太网口。基于电气电路的机床数据采集，针对机床无数控系统或数控系统不具备数据采集功能。   OPC UA服务 用于存储机床数据的OPC UA服务器。1、针对具体的实物设备，构建设备信息模型。2、对模型向OPC UA进行映射或转换，得到设备的OPC UA信息模型。具体做法：使用建模工具（如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OPC UA服务流程">
+<meta property="og:url" content="http://example.com/2022/03/04/OPC-UA%E6%9C%8D%E5%8A%A1%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="小柯先森">
+<meta property="og:description" content="机床数据采集方式目前主要有两种方式：基于通信接口的机床数据采集，针对数控系统有标准通信接口的情况，如RS232、以太网口。基于电气电路的机床数据采集，针对机床无数控系统或数控系统不具备数据采集功能。   OPC UA服务 用于存储机床数据的OPC UA服务器。1、针对具体的实物设备，构建设备信息模型。2、对模型向OPC UA进行映射或转换，得到设备的OPC UA信息模型。具体做法：使用建模工具（如">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-04T14:04:07.000Z">
+<meta property="article:modified_time" content="2022-03-04T14:04:54.938Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="OPC UA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小柯先森" type="application/atom+xml">
@@ -150,64 +155,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-OPC-UA服务流程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/04/%E7%AB%8B%E6%98%A5/" class="archive-article-date">
-  	<time datetime="2022-02-04T13:32:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/04/%E7%AB%8B%E6%98%A5/">立春</a>
+    <h1 class="article-title" itemprop="name">
+      OPC UA服务流程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/03/04/OPC-UA%E6%9C%8D%E5%8A%A1%E6%B5%81%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2022-03-04T14:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="机床数据采集方式"><a href="#机床数据采集方式" class="headerlink" title="机床数据采集方式"></a>机床数据采集方式</h4><p><font face="楷体" >目前主要有两种方式：<br>基于通信接口的机床数据采集，针对数控系统有标准通信接口的情况，如RS232、以太网口。<br>基于电气电路的机床数据采集，针对机床无数控系统或数控系统不具备数据采集功能。<br></font>  </p>
+<h4 id="OPC-UA服务"><a href="#OPC-UA服务" class="headerlink" title="OPC UA服务"></a>OPC UA服务</h4><p><font face="楷体" > <strong>用于存储机床数据的OPC UA服务器</strong>。<br>1、针对具体的实物设备，构建设备信息模型。<br>2、对模型向OPC UA进行映射或转换，得到设备的OPC UA信息模型。具体做法：使用建模工具（如UaModeler、opcua-modeler）构建机床OPC UA信息模型XML文档。<br>3、SDK编译设备OPC UA模型，生成含有设备信息模型的地址空间并更新到OPC UA服务器中。具体做法：基于机床信息模型XML文档，使用合适的SDK（如open62541）将其编译至OPC UA地址空间。<br>4、数据采集平台实例化含有机床信息模型的地址空间的OPC UA Server。<br>5、将OPC UA server机床各数据节点导出，储存至节点信息XML文档。<br>6、数据采集平台获取数据后，通过节点XML文档将数据更新至OPC UA Server节点及数据库（如MySQL）。<br>7、OPC UA Client 访问 OPC UA Server中节点数据。<br>注意：当OPC UA服务器嵌入到可编程控制设备或现场设备（数控机床、工业机器人等）时，处于监控控制层或车间层的OPC UA应用程序可直接获取现场数据。<br></font></p>
+<h4 id="OPC-UA的优势"><a href="#OPC-UA的优势" class="headerlink" title="OPC UA的优势"></a>OPC UA的优势</h4><p><font face="楷体" >它是一个不绑定专有技术、独立于供应商和操作系统的开放式标准。能够更轻松地将模块化和可扩展的生产设备连接到诸如MES或ERP等上位系统。为各种系统和设备间的互联互通提供可能。<br></font><br>参考：陈彦智. 基于OPC UA的机床运行状态数据可配置采集系统研究[D]. 重庆大学, 2018.</p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assert/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生活感悟</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OPC UA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/04/OPC-UA%E6%9C%8D%E5%8A%A1%E6%B5%81%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2022/02/24/%E6%94%B6%E8%97%8F%E7%BD%91%E5%9D%80%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">收藏网址整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "zNgAPuMSgChdmx4Q3eKTERs2-gzGzoHsz",
+            app_key: "cBRY0BOrhzay2olWuaudULqX",
+            placeholder: "Just go go",
+            avatar:"wavatar"
+        });
+    }
+</script>
+
+  </section>
+
+
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/02/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/02/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -230,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
