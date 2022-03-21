@@ -152,6 +152,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mex文件无效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/21/mex%E6%96%87%E4%BB%B6%E6%97%A0%E6%95%88/">matlab中“mex文件无效”的解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/21/mex%E6%96%87%E4%BB%B6%E6%97%A0%E6%95%88/" class="archive-article-date">
+  	<time datetime="2022-03-21T07:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="mex文件是什么"><a href="#mex文件是什么" class="headerlink" title="mex文件是什么"></a>mex文件是什么</h4><p><font face="楷体" >MEX文件是一种“可在matlab环境中调用的C（或fortran）语言衍生程序”。也就是说，MEX文件的源码文件是由C或Fortran语言编写的，后经matlab编译器处理而生成的二进制文件；它可以被matlab解释器自动装载并执行的动态链接程序，这种文件在windows下是ddl文件。</font>  </p>
+<h4 id="为什么mex文件会失效"><a href="#为什么mex文件会失效" class="headerlink" title="为什么mex文件会失效"></a>为什么mex文件会失效</h4><p><font face="楷体" > 如果 MATLAB 找不到 MEX 文件引用的所有 .dll 文件，则无法加载该 MEX 文件。<br></font></p>
+<h4 id="如何找到失效的具体原因"><a href="#如何找到失效的具体原因" class="headerlink" title="如何找到失效的具体原因"></a>如何找到失效的具体原因</h4><p><font face="楷体" >第一种情况，matlab会主动给出提示缺少的dll文件；<br>第二种情况，matlab未给出提示，因为你引用的mex文件与当前最新的matlab版本不兼容，可以下载前面版本的matlab运行查找缺少的dll文件。<br></font>  </p>
+<h4 id="缺失的dll文件从哪里找"><a href="#缺失的dll文件从哪里找" class="headerlink" title="缺失的dll文件从哪里找"></a>缺失的dll文件从哪里找</h4><p><font face="Times New Roman" >Microsoft Visual C++运行库集合包集合了公用dll运行库，能够让用户开发多种程序，软件包含了从05版到17版的所有组件，适用于Windows xp以上系统。<br>msvcp、msvcr60、71和80.dll，以及vcomp.dll（不带数字版本号）属于VC++2005版<br>msvcp、msvcr、vcomp90.dll属于 VC++2008版<br>msvcp、msvcr、vcomp100.dll属于VC++2010版　<br>msvcp、msvcr、vcomp110.dll属于VC++2012版　　<br>msvcp、msvcr、vcomp120.dll属于VC++2013版　　<br>msvcp、msvcr、vcomp140.dll属于VC++2015版　　<br>提示找不到VCRUNTIME140_1.dll请下载15-19合集<br>各个版本Microsoft Visual C++运行库下载：</font>  </p>
+<h5 id="Microsoft-Visual-C-2005"><a href="#Microsoft-Visual-C-2005" class="headerlink" title="Microsoft Visual C++ 2005"></a>Microsoft Visual C++ 2005</h5><font face="Times New Roman" >
+Microsoft Visual C++ 2005 Redistributable Package (x86)
+http://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x86.exe</font>  
+
+<font face="Times New Roman" >
+Microsoft Visual C++ 2005 Redistributable Package (x64)
+http://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x64.exe
+</font>  
+
+<h5 id="Microsoft-Visual-C-2008"><a href="#Microsoft-Visual-C-2008" class="headerlink" title="Microsoft Visual C++ 2008"></a>Microsoft Visual C++ 2008</h5><font face="Times New Roman" >
+Microsoft Visual C++ 2008 Redistributable Package (x86)
+https://download.microsoft.com/download/9/7/7/977B481A-7BA6-4E30-AC40-ED51EB2028F2/vcredist_x86.exe</font>  
+
+<font face="Times New Roman" >
+Microsoft Visual C++ 2008 Redistributable Package (x64)
+https://download.microsoft.com/download/9/7/7/977B481A-7BA6-4E30-AC40-ED51EB2028F2/vcredist_x64.exe
+</font>  
+
+<h5 id="Microsoft-Visual-C-2010"><a href="#Microsoft-Visual-C-2010" class="headerlink" title="Microsoft Visual C++ 2010"></a>Microsoft Visual C++ 2010</h5><font face="Times New Roman" >
+Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)
+https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe</font>  
+
+<font face="Times New Roman" >
+Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)
+https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe</font>  
+
+<h5 id="Microsoft-Visual-C-2012"><a href="#Microsoft-Visual-C-2012" class="headerlink" title="Microsoft Visual C++2012"></a>Microsoft Visual C++2012</h5><font face="Times New Roman" >
+Visual C++ Redistributable for Visual Studio 2012 Update 4
+https://www.microsoft.com/zh-cn/download/details.aspx?id=30679</font>  
+
+<h5 id="Microsoft-Visual-C-2013"><a href="#Microsoft-Visual-C-2013" class="headerlink" title="Microsoft Visual C++2013"></a>Microsoft Visual C++2013</h5><font face="Times New Roman" >
+Visual C++ Redistributable Packages for Visual Studio 2013
+https://www.microsoft.com/zh-cn/download/details.aspx?id=40784</font>  
+
+<h5 id="Microsoft-Visual-C-2015"><a href="#Microsoft-Visual-C-2015" class="headerlink" title="Microsoft Visual C++ 2015"></a>Microsoft Visual C++ 2015</h5><font face="Times New Roman" >
+Microsoft Visual C++ 2015 Redistributable Update 3
+https://www.microsoft.com/zh-cn/download/details.aspx?id=53587
+Visual C++ Redistributable for Visual Studio 2015
+https://www.microsoft.com/zh-cn/download/details.aspx?id=48145
+</font>  
+
+<h5 id="Microsoft-Visual-C-2017"><a href="#Microsoft-Visual-C-2017" class="headerlink" title="Microsoft Visual C++ 2017"></a>Microsoft Visual C++ 2017</h5><font face="Times New Roman" >
+X64
+</font>  
+
+<font face="Times New Roman" >
+https://go.microsoft.com/fwlink/?LinkId=746572
+</font>  
+
+<font face="Times New Roman" >
+x86
+</font>  
+
+<font face="Times New Roman" >
+https://go.microsoft.com/fwlink/?LinkId=746571
+</font>  
+
+<h5 id="Visual-Studio-2015-2017-2019-and-2022"><a href="#Visual-Studio-2015-2017-2019-and-2022" class="headerlink" title="Visual Studio 2015, 2017, 2019, and 2022"></a>Visual Studio 2015, 2017, 2019, and 2022</h5><font face="Times New Roman" >
+https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads</font>  
+
+<font face="Times New Roman" >
+https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0</font> 
+
+<h5 id="github维护"><a href="#github维护" class="headerlink" title="github维护"></a>github维护</h5><font face="Times New Roman" >
+https://github.com/abbodi1406/vcredist/tree/master/source_links</font>  
+
+<h5 id="以上资源链接转载自博客："><a href="#以上资源链接转载自博客：" class="headerlink" title="以上资源链接转载自博客："></a>以上资源链接转载自博客：</h5><p><font face="Times New Roman" ><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42831477/article/details/81429004">https://blog.csdn.net/weixin_42831477/article/details/81429004</a></font>  </p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">matlab</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决办法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/21/mex%E6%96%87%E4%BB%B6%E6%97%A0%E6%95%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-做事要做好" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -941,90 +1090,6 @@
 
 
   
-    <article id="post-OPC-UA介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/14/OPC-UA%E4%BB%8B%E7%BB%8D/">OPC UA介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/14/OPC-UA%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2022-02-14T05:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="OPC协议"><a href="#OPC协议" class="headerlink" title="OPC协议"></a>OPC协议</h4><p><font face="楷体" >为了便于自动化行业不同厂家的设备和应用程序能相互交换数据,定义了一个统一的接口函数,就是OPC协议规范。有了OPC就可以使用统一的方式去访问不同设备厂商的产品数据。<br>OPC基金会前前后后规定了不同的接口定义，如下：<br>OPC DA (Data Access, exchange of real-time values,数据访问)，定义了数据交换，包括值、时间和质量信息。<br>OPC A&amp;E (Alarms &amp; Events, exchange of alarms and events,警报和事件)，定义了报警和事件类型消息信息的交换，以及变量状态和状态管理。<br>OPC HDA (Historical Data Access, exchange of historical values,历史数据访问)，定义了可应用于历史数据、时间数据的查询和分析的方法。<br>OPC XML DA (XML-based exchange of real-time values)给予XML的实时数据访问规范 。 </p>
-</font>  
-
-<h4 id="OPC-UA协议"><a href="#OPC-UA协议" class="headerlink" title="OPC UA协议"></a>OPC UA协议</h4><p><font face="楷体" >OPC UA相较于OPC协议扩展了平台（Linux,Unix,Mac等）；扩展了对象类型，支持更复杂的数据类型比如变量、方法和事件；易于配置；协议和应用层集成了安全功能，更安全。</font>  </p>
-<h4 id="OPC-UA应用场景"><a href="#OPC-UA应用场景" class="headerlink" title="OPC UA应用场景"></a>OPC UA应用场景</h4><p><font face="楷体" ><strong>设备不再作为客户端，而是作为OPC UA Server提供各种服务，应用程序作为客户端连接到设备，调用OPC UA Server提供的各种服务。</strong></font></p>
-<p><font face="楷体" >参考：</font><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1W44y1J7LA?p=2">https://www.bilibili.com/video/BV1W44y1J7LA?p=2</a></p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">概念</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OPC UA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/14/OPC-UA%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -1130,7 +1195,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解决办法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">生活感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网址收藏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1139,10 +1216,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">反向推理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网址收藏</a>
               </li>
              
               <li class="article-tag-list-item">
